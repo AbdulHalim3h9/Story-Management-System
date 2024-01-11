@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+@section Styles
+    {
+    <link rel="stylesheet" href="~/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Showing the list of all the stories ever aired</h3>
+    </div>
+    <div class="card-body">
+        <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table id="stories" class="table table-bordered table-striped dataTable dtr-inline" aria-describedby="example1_info">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Genre</th>
+                                <th>Author</th>
+                                <th>Origin</th>
+                                <th>Length</th>
+                                <th>Rating</th>
+                                <th>Airing Date</th>
+                            </tr>
+                        </thead>
+                        
+                        <tfoot>
+                            <tr>
+                                <th>Title</th>
+                                <th>Genre</th>
+                                <th>Author</th>
+                                <th>Origin</th>
+                                <th>Length</th>
+                                <th>Rating</th>
+                                <th>Airing Date</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script src="~/admin/plugins/jquery/jquery.min.js"></script>
+    <script src="~/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/admin/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="~/admin/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="~/admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="~/admin/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/admin/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="~/admin/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+    <script>
+        $('#stories').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "/admin/story/GetStoryData"
+            }
+        });
+    </script>
+}

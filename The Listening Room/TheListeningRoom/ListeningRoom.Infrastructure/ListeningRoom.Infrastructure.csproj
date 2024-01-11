@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.11" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.11" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.11" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.11" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.11" />
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+		<PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+		<PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.20" />
+	</ItemGroup>
+
+</Project>
